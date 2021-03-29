@@ -3,8 +3,9 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>CephOSDVersionMismatch :: OCS Standard Operating Procedures</title>
-    <link rel="canonical" href="https://red-hat-storage.github.io/ocs-sop/sop/alerts/CephOSDVersionMismatch.html">
+    <title>AlertName :: OCS Standard Operating Procedures</title>
+    <link rel="canonical" href="https://red-hat-storage.github.io/ocs-sop/sop/alerts/basic_template.html">
+    <meta name="description" content="Description from the actual alert.">
     <meta name="generator" content="Antora 2.3.4">
     <link rel="stylesheet" href="../../_/css/site.css">
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-PDMKGVZNGE"></script>
@@ -64,7 +65,7 @@
     <button class="nav-item-toggle"></button>
     <span class="nav-text">Alerts</span>
 <ul class="nav-list">
-  <li class="nav-item" data-depth="1">
+  <li class="nav-item is-current-page" data-depth="1">
     <a class="nav-link" href="basic_template.html">basic_template</a>
   </li>
   <li class="nav-item" data-depth="1">
@@ -109,7 +110,7 @@
   <li class="nav-item" data-depth="1">
     <a class="nav-link" href="CephOSDDiskUnavailable.html">CephOSDDiskUnavailable</a>
   </li>
-  <li class="nav-item is-current-page" data-depth="1">
+  <li class="nav-item" data-depth="1">
     <a class="nav-link" href="CephOSDVersionMismatch.html">CephOSDVersionMismatch</a>
   </li>
   <li class="nav-item" data-depth="1">
@@ -201,56 +202,82 @@
   <ul>
     <li><a href="../index.html">OCS Standard Operating Procedures</a></li>
     <li>Alerts</li>
-    <li><a href="CephOSDVersionMismatch.html">CephOSDVersionMismatch</a></li>
+    <li><a href="basic_template.html">basic_template</a></li>
   </ul>
 </nav>
-  <div class="edit-this-page"><a href="file:///antora/sop/modules/alerts/pages/CephOSDVersionMismatch.adoc">Edit this Page</a></div>
+  <div class="edit-this-page"><a href="file:///antora/sop/modules/alerts/pages/basic_template.adoc">Edit this Page</a></div>
 </div>
   <div class="content">
 <aside class="toc sidebar" data-title="Contents" data-levels="2">
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">CephOSDVersionMismatch</h1>
+<h1 class="page">AlertName</h1>
 <div id="preamble">
 <div class="sectionbody">
-<div id="toc" class="toc">
-<div id="toctitle" class="title"><b>Table of Contents</b></div>
-<ul class="sectlevel1">
-<li><a href="#_check_description">1. Check Description</a></li>
-<li><a href="#_overview">2. Overview</a></li>
-<li><a href="#_prerequsities">3. Prerequsities</a></li>
-<li><a href="#_alert">4. Alert</a>
-<ul class="sectlevel2">
-<li><a href="#_make_changes_to_solve_alert">4.1. Make changes to solve alert</a></li>
-</ul>
-</li>
-<li><a href="#_troubleshooting">5. Troubleshooting</a></li>
-</ul>
+<div class="exampleblock">
+<div class="content">
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Tab 1 Title</dt>
+<dd>
+<div class="openblock">
+<div class="content">
+<div class="paragraph">
+<p>This is the content of the first tab.</p>
+</div>
+<div class="paragraph">
+<p>Another paragraph in the first tab.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">$ a code block</code></pre>
+</div>
+</div>
+</div>
+</div>
+</dd>
+<dt class="hdlist1">Tab 2 Title</dt>
+<dd>
+<div class="paragraph">
+<p>This is the content of the second tab.</p>
+</div>
+</dd>
+</dl>
+</div>
+</div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_check_description"><a class="anchor" href="#_check_description"></a>1. Check Description</h2>
+<h2 id="_title_message"><a class="anchor" href="#_title_message"></a>1. {title_message}</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p><strong>Severity:</strong> Warning</p>
-</div>
-<div class="paragraph">
-<p><strong>Potential Customer Impact:</strong> High</p>
+<p>Message from the actual alert.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_overview"><a class="anchor" href="#_overview"></a>2. Overview</h2>
+<h2 id="_title_description"><a class="anchor" href="#_title_description"></a>2. {title_description}</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Different versions of Ceph OSD components are running. This alert may trigger during an upgrade that is taking a long time. To resolve this alter, determine if an upgrade is in progress and simply requires more time or if the upgrade process needs restarting.</p>
+<p>Description from the actual alert.</p>
+</div>
+<div class="paragraph">
+<p>Detailed Description: Fill this in if necessary or leave ''</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_prerequsities"><a class="anchor" href="#_prerequsities"></a>3. Prerequsities</h2>
+<h2 id="_title_severity"><a class="anchor" href="#_title_severity"></a>3. {title_severity}</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><strong>Critical, Error, Warning</strong></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_prerequsities"><a class="anchor" href="#_prerequsities"></a>4. Prerequsities</h2>
 <div class="sectionbody">
 <div class="ulist">
 <ul>
@@ -271,59 +298,28 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="_alert"><a class="anchor" href="#_alert"></a>4. Alert</h2>
+<h2 id="_title_procedure"><a class="anchor" href="#_title_procedure"></a>5. {title_procedure}</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_resolution_overview"><a class="anchor" href="#_resolution_overview"></a>5.1. Resolution Overview</h3>
+<div class="paragraph">
+<p>Fill this in if necessary or leave ''</p>
+</div>
+<div class="paragraph">
+<p>Include your resolution partial here. Or not! You can decide to just insert this section into your
+adoc if you know the procedure/resolution is unique to that SOP.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_title_logs"><a class="anchor" href="#_title_logs"></a>6. {title_logs}</h2>
 <div class="sectionbody">
 <div class="listingblock">
 <div class="title">Document Ceph Cluster health check:</div>
 <div class="content">
 <pre>For OCS specific results run:
 oc adm must-gather --image=registry.redhat.io/ocs4/ocs-must-gather-rhel8:v4.6</pre>
-</div>
-</div>
-<div class="paragraph">
-<p>See prequistes.</p>
-</div>
-<div class="sect2">
-<h3 id="_make_changes_to_solve_alert"><a class="anchor" href="#_make_changes_to_solve_alert"></a>4.1. Make changes to solve alert</h3>
-<div class="paragraph">
-<p>Check if an operator upgrade is in progress. WIP</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Verify an update is in progress.</p>
-<div class="ulist">
-<ul>
-<li>
-<p>oc get clusteroperators</p>
-</li>
-<li>
-<p>oc get pod -n openshift-storage</p>
-</li>
-</ul>
-</div>
-</li>
-</ol>
-</div>
-<div class="paragraph">
-<p>continue with <a href="https://docs.openshift.com/container-platform/4.5/support/troubleshooting/troubleshooting-operator-issues.html" class="bare">https://docs.openshift.com/container-platform/4.5/support/troubleshooting/troubleshooting-operator-issues.html</a></p>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_troubleshooting"><a class="anchor" href="#_troubleshooting"></a>5. Troubleshooting</h2>
-<div class="sectionbody">
-<div class="ulist">
-<ul>
-<li>
-<p>Issue encountered while following the SOP</p>
-</li>
-</ul>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre>Any issues while following the SOP should be documented here.</pre>
 </div>
 </div>
 </div>

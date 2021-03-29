@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>CephOSDVersionMismatch :: OCS Standard Operating Procedures</title>
-    <link rel="canonical" href="https://red-hat-storage.github.io/ocs-sop/sop/alerts/CephOSDVersionMismatch.html">
+    <title>CephPGRepairTakingTooLong :: OCS Standard Operating Procedures</title>
+    <link rel="canonical" href="https://red-hat-storage.github.io/ocs-sop/sop/OSD/CephPGRepairTakingTooLong.html">
     <meta name="generator" content="Antora 2.3.4">
     <link rel="stylesheet" href="../../_/css/site.css">
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-PDMKGVZNGE"></script>
@@ -65,22 +65,70 @@
     <span class="nav-text">Alerts</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="basic_template.html">basic_template</a>
+    <a class="nav-link" href="../alerts/basic_template.html">basic_template</a>
   </li>
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="CephClusterReadOnly.html">CephClusterReadOnly</a>
+    <a class="nav-link" href="../alerts/CephClusterReadOnly.html">CephClusterReadOnly</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../alerts/CephClusterErrorState.html">CephClusterErrorState</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../alerts/CephClusterCriticallyFull.html">CephClusterCriticallyFull</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../alerts/CephOSDCriticallyFull.html">CephOSDCriticallyFull</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../alerts/CephOSDNearFull.html">CephOSDNearFull</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../alerts/CephClusterWarningState.html">CephClusterWarningState</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../alerts/CephMdsMissingReplicas.html">CephMdsMissingReplicas</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../alerts/CephMgrIsAbsent.html">CephMgrIsAbsent</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../alerts/CephMgrIsMissingReplicas.html">CephMgrIsMissingReplicas</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../alerts/CephMonQuorumAtRisk.html">CephMonQuorumAtRisk</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../alerts/CephMonVersionMismatch.html">CephMonVersionMismatch</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../alerts/CephNodeDown.html">CephNodeDown</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../alerts/CephOSDDiskNotResponding.html">CephOSDDiskNotResponding</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../alerts/CephOSDDiskUnavailable.html">CephOSDDiskUnavailable</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../alerts/CephOSDVersionMismatch.html">CephOSDVersionMismatch</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../alerts/CephPGRepairTakingTooLong.html">CephPGRepairTakingTooLong</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">OSD</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="CephClusterCriticallyFull.html">CephClusterCriticallyFull</a>
   </li>
   <li class="nav-item" data-depth="1">
     <a class="nav-link" href="CephClusterErrorState.html">CephClusterErrorState</a>
   </li>
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="CephClusterCriticallyFull.html">CephClusterCriticallyFull</a>
-  </li>
-  <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="CephOSDCriticallyFull.html">CephOSDCriticallyFull</a>
-  </li>
-  <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="CephOSDNearFull.html">CephOSDNearFull</a>
+    <a class="nav-link" href="CephClusterReadOnly.html">CephClusterReadOnly</a>
   </li>
   <li class="nav-item" data-depth="1">
     <a class="nav-link" href="CephClusterWarningState.html">CephClusterWarningState</a>
@@ -104,70 +152,22 @@
     <a class="nav-link" href="CephNodeDown.html">CephNodeDown</a>
   </li>
   <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="CephOSDCriticallyFull.html">CephOSDCriticallyFull</a>
+  </li>
+  <li class="nav-item" data-depth="1">
     <a class="nav-link" href="CephOSDDiskNotResponding.html">CephOSDDiskNotResponding</a>
   </li>
   <li class="nav-item" data-depth="1">
     <a class="nav-link" href="CephOSDDiskUnavailable.html">CephOSDDiskUnavailable</a>
   </li>
-  <li class="nav-item is-current-page" data-depth="1">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="CephOSDNearFull.html">CephOSDNearFull</a>
+  </li>
+  <li class="nav-item" data-depth="1">
     <a class="nav-link" href="CephOSDVersionMismatch.html">CephOSDVersionMismatch</a>
   </li>
-  <li class="nav-item" data-depth="1">
+  <li class="nav-item is-current-page" data-depth="1">
     <a class="nav-link" href="CephPGRepairTakingTooLong.html">CephPGRepairTakingTooLong</a>
-  </li>
-</ul>
-  </li>
-  <li class="nav-item" data-depth="0">
-    <button class="nav-item-toggle"></button>
-    <span class="nav-text">OSD</span>
-<ul class="nav-list">
-  <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="../OSD/CephClusterCriticallyFull.html">CephClusterCriticallyFull</a>
-  </li>
-  <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="../OSD/CephClusterErrorState.html">CephClusterErrorState</a>
-  </li>
-  <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="../OSD/CephClusterReadOnly.html">CephClusterReadOnly</a>
-  </li>
-  <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="../OSD/CephClusterWarningState.html">CephClusterWarningState</a>
-  </li>
-  <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="../OSD/CephMdsMissingReplicas.html">CephMdsMissingReplicas</a>
-  </li>
-  <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="../OSD/CephMgrIsAbsent.html">CephMgrIsAbsent</a>
-  </li>
-  <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="../OSD/CephMgrIsMissingReplicas.html">CephMgrIsMissingReplicas</a>
-  </li>
-  <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="../OSD/CephMonQuorumAtRisk.html">CephMonQuorumAtRisk</a>
-  </li>
-  <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="../OSD/CephMonVersionMismatch.html">CephMonVersionMismatch</a>
-  </li>
-  <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="../OSD/CephNodeDown.html">CephNodeDown</a>
-  </li>
-  <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="../OSD/CephOSDCriticallyFull.html">CephOSDCriticallyFull</a>
-  </li>
-  <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="../OSD/CephOSDDiskNotResponding.html">CephOSDDiskNotResponding</a>
-  </li>
-  <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="../OSD/CephOSDDiskUnavailable.html">CephOSDDiskUnavailable</a>
-  </li>
-  <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="../OSD/CephOSDNearFull.html">CephOSDNearFull</a>
-  </li>
-  <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="../OSD/CephOSDVersionMismatch.html">CephOSDVersionMismatch</a>
-  </li>
-  <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="../OSD/CephPGRepairTakingTooLong.html">CephPGRepairTakingTooLong</a>
   </li>
 </ul>
   </li>
@@ -200,18 +200,18 @@
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
     <li><a href="../index.html">OCS Standard Operating Procedures</a></li>
-    <li>Alerts</li>
-    <li><a href="CephOSDVersionMismatch.html">CephOSDVersionMismatch</a></li>
+    <li>OSD</li>
+    <li><a href="CephPGRepairTakingTooLong.html">CephPGRepairTakingTooLong</a></li>
   </ul>
 </nav>
-  <div class="edit-this-page"><a href="file:///antora/sop/modules/alerts/pages/CephOSDVersionMismatch.adoc">Edit this Page</a></div>
+  <div class="edit-this-page"><a href="file:///antora/sop/modules/OSD/pages/CephPGRepairTakingTooLong.adoc">Edit this Page</a></div>
 </div>
   <div class="content">
 <aside class="toc sidebar" data-title="Contents" data-levels="2">
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">CephOSDVersionMismatch</h1>
+<h1 class="page">CephPGRepairTakingTooLong</h1>
 <div id="preamble">
 <div class="sectionbody">
 <div id="toc" class="toc">
@@ -245,40 +245,24 @@
 <h2 id="_overview"><a class="anchor" href="#_overview"></a>2. Overview</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Different versions of Ceph OSD components are running. This alert may trigger during an upgrade that is taking a long time. To resolve this alter, determine if an upgrade is in progress and simply requires more time or if the upgrade process needs restarting.</p>
+<p>The self healing problems have been detected. Check for inconsistent placement groups and repair.
+<a href="https://access.redhat.com/solutions/1589113" class="bare">https://access.redhat.com/solutions/1589113</a></p>
 </div>
 </div>
 </div>
 <div class="sect1">
 <h2 id="_prerequsities"><a class="anchor" href="#_prerequsities"></a>3. Prerequsities</h2>
 <div class="sectionbody">
-<div class="ulist">
-<ul>
-<li>
-<p>Ensure you have <a href="Prerequisites.html#verify_cluster_access">cluster admin access.</a></p>
-</li>
-<li>
-<p>Ensure the alert is <a href="Prerequisites.html#verify_alert">still active.</a></p>
-</li>
-<li>
-<p>Document <a href="Prerequisites.html#check_cluster_health">current cluster health.</a></p>
-</li>
-<li>
-<p>Deploy the <a href="Prerequisites.html#deploy_toolbox">Ceph toolbox</a> if necessary.</p>
-</li>
-</ul>
+<div class="paragraph">
+<p>Unresolved include directive in modules/OSD/pages/CephPGRepairTakingTooLong.adoc - include::common:partial$prerequisites.adoc[]</p>
 </div>
 </div>
 </div>
 <div class="sect1">
 <h2 id="_alert"><a class="anchor" href="#_alert"></a>4. Alert</h2>
 <div class="sectionbody">
-<div class="listingblock">
-<div class="title">Document Ceph Cluster health check:</div>
-<div class="content">
-<pre>For OCS specific results run:
-oc adm must-gather --image=registry.redhat.io/ocs4/ocs-must-gather-rhel8:v4.6</pre>
-</div>
+<div class="paragraph">
+<p>Unresolved include directive in modules/OSD/pages/CephPGRepairTakingTooLong.adoc - include::common:partial$gather_logs.adoc[]</p>
 </div>
 <div class="paragraph">
 <p>See prequistes.</p>
@@ -286,27 +270,11 @@ oc adm must-gather --image=registry.redhat.io/ocs4/ocs-must-gather-rhel8:v4.6</p
 <div class="sect2">
 <h3 id="_make_changes_to_solve_alert"><a class="anchor" href="#_make_changes_to_solve_alert"></a>4.1. Make changes to solve alert</h3>
 <div class="paragraph">
-<p>Check if an operator upgrade is in progress. WIP</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Verify an update is in progress.</p>
-<div class="ulist">
-<ul>
-<li>
-<p>oc get clusteroperators</p>
-</li>
-<li>
-<p>oc get pod -n openshift-storage</p>
-</li>
-</ul>
-</div>
-</li>
-</ol>
+<p>WIP</p>
 </div>
 <div class="paragraph">
-<p>continue with <a href="https://docs.openshift.com/container-platform/4.5/support/troubleshooting/troubleshooting-operator-issues.html" class="bare">https://docs.openshift.com/container-platform/4.5/support/troubleshooting/troubleshooting-operator-issues.html</a></p>
+<p>Check with team:
+Checkk other alerts first or go for ceph pg repair steps?</p>
 </div>
 </div>
 </div>
@@ -314,17 +282,8 @@ oc adm must-gather --image=registry.redhat.io/ocs4/ocs-must-gather-rhel8:v4.6</p
 <div class="sect1">
 <h2 id="_troubleshooting"><a class="anchor" href="#_troubleshooting"></a>5. Troubleshooting</h2>
 <div class="sectionbody">
-<div class="ulist">
-<ul>
-<li>
-<p>Issue encountered while following the SOP</p>
-</li>
-</ul>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre>Any issues while following the SOP should be documented here.</pre>
-</div>
+<div class="paragraph">
+<p>Unresolved include directive in modules/OSD/pages/CephPGRepairTakingTooLong.adoc - include::common:partial$troubleshooting.adoc[]</p>
 </div>
 </div>
 </div>

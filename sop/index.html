@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>OCS Standard Operating Procedures :: OCS Standard Operating Procedures</title>
+    <title>Openshift Data Foundation (formerly OCS)  Standard Operating Procedures :: OCS Standard Operating Procedures</title>
     <link rel="canonical" href="https://red-hat-storage.github.io/ocs-sop/sop/index.html">
     <meta name="generator" content="Antora 2.3.4">
     <link rel="stylesheet" href="../_/css/site.css">
@@ -65,13 +65,22 @@
     <span class="nav-text">Alerts</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="alerts/CephClusterCriticallyFull.html">CephClusterCriticallyFull</a>
+    <a class="nav-link" href="alerts/basic_template.html">basic_template</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="alerts/CephClusterReadOnly.html">CephClusterReadOnly</a>
   </li>
   <li class="nav-item" data-depth="1">
     <a class="nav-link" href="alerts/CephClusterErrorState.html">CephClusterErrorState</a>
   </li>
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="alerts/CephClusterReadOnly.html">CephClusterReadOnly</a>
+    <a class="nav-link" href="alerts/CephClusterCriticallyFull.html">CephClusterCriticallyFull</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="alerts/CephOSDCriticallyFull.html">CephOSDCriticallyFull</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="alerts/CephOSDNearFull.html">CephOSDNearFull</a>
   </li>
   <li class="nav-item" data-depth="1">
     <a class="nav-link" href="alerts/CephClusterWarningState.html">CephClusterWarningState</a>
@@ -95,22 +104,70 @@
     <a class="nav-link" href="alerts/CephNodeDown.html">CephNodeDown</a>
   </li>
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="alerts/CephOSDCriticallyFull.html">CephOSDCriticallyFull</a>
-  </li>
-  <li class="nav-item" data-depth="1">
     <a class="nav-link" href="alerts/CephOSDDiskNotResponding.html">CephOSDDiskNotResponding</a>
   </li>
   <li class="nav-item" data-depth="1">
     <a class="nav-link" href="alerts/CephOSDDiskUnavailable.html">CephOSDDiskUnavailable</a>
   </li>
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="alerts/CephOSDNearFull.html">CephOSDNearFull</a>
-  </li>
-  <li class="nav-item" data-depth="1">
     <a class="nav-link" href="alerts/CephOSDVersionMismatch.html">CephOSDVersionMismatch</a>
   </li>
   <li class="nav-item" data-depth="1">
     <a class="nav-link" href="alerts/CephPGRepairTakingTooLong.html">CephPGRepairTakingTooLong</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">OSD</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="OSD/CephClusterCriticallyFull.html">CephClusterCriticallyFull</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="OSD/CephClusterErrorState.html">CephClusterErrorState</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="OSD/CephClusterReadOnly.html">CephClusterReadOnly</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="OSD/CephClusterWarningState.html">CephClusterWarningState</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="OSD/CephMdsMissingReplicas.html">CephMdsMissingReplicas</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="OSD/CephMgrIsAbsent.html">CephMgrIsAbsent</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="OSD/CephMgrIsMissingReplicas.html">CephMgrIsMissingReplicas</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="OSD/CephMonQuorumAtRisk.html">CephMonQuorumAtRisk</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="OSD/CephMonVersionMismatch.html">CephMonVersionMismatch</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="OSD/CephNodeDown.html">CephNodeDown</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="OSD/CephOSDCriticallyFull.html">CephOSDCriticallyFull</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="OSD/CephOSDDiskNotResponding.html">CephOSDDiskNotResponding</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="OSD/CephOSDDiskUnavailable.html">CephOSDDiskUnavailable</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="OSD/CephOSDNearFull.html">CephOSDNearFull</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="OSD/CephOSDVersionMismatch.html">CephOSDVersionMismatch</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="OSD/CephPGRepairTakingTooLong.html">CephPGRepairTakingTooLong</a>
   </li>
 </ul>
   </li>
@@ -143,21 +200,22 @@
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
     <li><a href="index.html">OCS Standard Operating Procedures</a></li>
+    <li><a href="index.html">Openshift Data Foundation (formerly OCS)  Standard Operating Procedures</a></li>
   </ul>
 </nav>
-  <div class="edit-this-page"><a href="https://github.com/red-hat-storage/ocs-sop/edit/main/sop/modules/ROOT/pages/index.adoc">Edit this Page</a></div>
-  </div>
+  <div class="edit-this-page"><a href="file:///antora/sop/modules/ROOT/pages/index.adoc">Edit this Page</a></div>
+</div>
   <div class="content">
 <aside class="toc sidebar" data-title="Contents" data-levels="2">
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">OCS Standard Operating Procedures</h1>
+<h1 class="page">Openshift Data Foundation (formerly OCS)  Standard Operating Procedures</h1>
 <div class="paragraph">
-<p>Welcome to OCS Standard Operating Procedures or SoPs!</p>
+<p>Welcome to Openshift Standard Standard Operating Procedures. These SOPs are provided for free and "as is" and are intended for Internal OCS deployments only. Please select your deploy type from the left navigation menu.</p>
 </div>
 <div class="paragraph">
-<p>Discover our SoPs in the left navigation menu</p>
+<p>To customize these SOPs for your own organization, please clone: <a href="https://github.com/red-hat-storage/ocs-sop.git" class="bare">https://github.com/red-hat-storage/ocs-sop.git</a></p>
 </div>
 </article>
   </div>
