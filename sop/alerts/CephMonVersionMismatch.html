@@ -319,10 +319,18 @@
 <div class="sect2">
 <h3 id="_document_ocs_ceph_cluster_health"><a class="anchor" href="#_document_ocs_ceph_cluster_health"></a>3.3. Document OCS Ceph Cluster Health</h3>
 <div class="paragraph">
-<p>You may directly check OCS Ceph Cluster health by using the rook-ceph toolbox.
-.Check and document ceph cluster health:</p>
+<p>You may directly check OCS Ceph Cluster health by using the rook-ceph toolbox.</p>
 </div>
 <div class="listingblock execute">
+<div class="content">
+<pre class="highlightjs highlight"><code>oc patch OCSInitialization ocsinit -n openshift-storage --type json --patch  '[{ "op": "replace", "path": "/spec/enableCephTools", "value": true }]'</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>After the <code>rook-ceph-tools</code> <strong>Pod</strong> is <code>Running</code>, access the <strong>toolbox</strong> like this:</p>
+</div>
+<div class="listingblock execute">
+<div class="title">Check and document ceph cluster health:</div>
 <div class="content">
 <pre class="highlightjs highlight"><code>TOOLS_POD=$(oc get pods -n openshift-storage -l app=rook-ceph-tools -o name)
 oc rsh -n openshift-storage $TOOLS_POD</code></pre>
