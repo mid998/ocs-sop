@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>CephMgrIsMissingReplicas :: OCS Standard Operating Procedures</title>
     <link rel="canonical" href="https://mid998.github.io/ocs-sop/sop/alerts/CephMgrIsMissingReplicas.html">
+    <meta name="description" content="Ceph Manager is missing replicas. This impacts health status reporting and will cause some of the information reported by &#x60;ceph status&#x60; to be missing or stale. In addition, the ceph manager is responsible for a Manager framework aimed at expanding the Ceph existing capabilities.">
     <meta name="generator" content="Antora 2.3.4">
     <link rel="stylesheet" href="../../_/css/site.css">
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-PDMKGVZNGE"></script>
@@ -64,6 +65,9 @@
     <button class="nav-item-toggle"></button>
     <span class="nav-text">Alerts (Reviewed SOPs)</span>
 <ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="basic_template.html">basic_template</a>
+  </li>
   <li class="nav-item" data-depth="1">
     <a class="nav-link" href="CephClusterReadOnly.html">CephClusterReadOnly</a>
   </li>
@@ -215,47 +219,19 @@
 </aside>
 <article class="doc">
 <h1 class="page">CephMgrIsMissingReplicas</h1>
-<div id="preamble">
+<div class="sect1">
+<h2 id="_message"><a class="anchor" href="#_message"></a>1. Message</h2>
 <div class="sectionbody">
-<div id="toc" class="toc">
-<div id="toctitle" class="title"><b>Table of Contents</b></div>
-<ul class="sectlevel1">
-<li><a href="#_check_description">1. Check Description</a></li>
-<li><a href="#_overview">2. Overview</a></li>
-<li><a href="#_prerequsities">3. Prerequsities</a></li>
-<li><a href="#_prerequisites">4. Prerequisites</a>
-<ul class="sectlevel2">
-<li><a href="#_verify_cluster_access">4.1. Verify cluster access</a></li>
-<li><a href="#_check_alerts">4.2. Check Alerts</a></li>
-<li><a href="#_document_ocs_ceph_cluster_health">4.3. Document OCS Ceph Cluster Health</a></li>
-</ul>
-</li>
-<li><a href="#_alert">5. Alert</a>
-<ul class="sectlevel2">
-<li><a href="#_make_changes_to_solve_alert">5.1. Make changes to solve alert</a></li>
-</ul>
-</li>
-<li><a href="#_troubleshooting">6. Troubleshooting</a></li>
-</ul>
+<div class="paragraph">
+<p>Storage metrics collector service not available anymore.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_check_description"><a class="anchor" href="#_check_description"></a>1. Check Description</h2>
+<h2 id="_description"><a class="anchor" href="#_description"></a>2. Description</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p><strong>Severity:</strong> Warning</p>
-</div>
-<div class="paragraph">
-<p><strong>Potential Customer Impact:</strong> High</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_overview"><a class="anchor" href="#_overview"></a>2. Overview</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Ceph Manager is missing replicas. This impacts health status reporting and will cause some of the information reported by <code>ceph status</code> to be missing or stale. In addition, the ceph manager is responsible for a Manager framework aimed at expanding the Ceph existing capabilities.</p>
+<p>Ceph Manager is missing replicas. This impacts health status reporting and will cause some of the information reported by `ceph status` to be missing or stale. In addition, the ceph manager is responsible for a Manager framework aimed at expanding the Ceph existing capabilities.</p>
 </div>
 <div class="paragraph">
 <p>To resolve this alert, you will need to determine the cause of the disappearance of the Ceph Manager and restart if necessary.</p>
@@ -263,9 +239,11 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="_prerequsities"><a class="anchor" href="#_prerequsities"></a>3. Prerequsities</h2>
+<h2 id="_severity"><a class="anchor" href="#_severity"></a>3. Severity</h2>
 <div class="sectionbody">
-
+<div class="paragraph">
+<p><strong>Warning</strong></p>
+</div>
 </div>
 </div>
 <div class="sect1">
@@ -376,83 +354,61 @@ exit</code></pre>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_alert"><a class="anchor" href="#_alert"></a>5. Alert</h2>
+<h2 id="_procedure_for_resolution"><a class="anchor" href="#_procedure_for_resolution"></a>5. Procedure for Resolution</h2>
 <div class="sectionbody">
-<div class="listingblock">
-<div class="title">Document Ceph Cluster health check:</div>
-<div class="content">
-<pre>For OCS specific results run:
-oc adm must-gather --image=registry.redhat.io/ocs4/ocs-must-gather-rhel8:v4.6</pre>
+<div class="sect2">
+<h3 id="_resolution_overview"><a class="anchor" href="#_resolution_overview"></a>5.1. Resolution Overview</h3>
+<div class="paragraph">
+<p></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_make_changes_to_solve_alert"><a class="anchor" href="#_make_changes_to_solve_alert"></a>5.1. Make changes to solve alert</h3>
-<div class="paragraph">
-<p><strong>Check for OCS Operator Update</strong></p>
-</div>
-<div class="paragraph">
-<p>WIP CLI does the status of the operator reflect update in progress?
-<a href="https://docs.openshift.com/container-platform/4.6/operators/admin/olm-status.html" class="bare">https://docs.openshift.com/container-platform/4.6/operators/admin/olm-status.html</a></p>
-</div>
-<div class="paragraph">
-<p>WIP UI
-The cause of the missing replicas must be determined and fixed. Basic troubleshooting starting with operator status all the way to OCP health may be required.</p>
-</div>
-<div class="paragraph">
-<p><strong>OCS Operator Subscription Health:</strong></p>
-</div>
-<div class="listingblock">
-<div class="title">Check the ocs-operator subscription status</div>
+<h3 id="_check_alerts_2"><a class="anchor" href="#_check_alerts_2"></a>5.2. Check Alerts</h3>
+<div class="listingblock execute">
+<div class="title">Get the route to this cluster&#8217;s alertmanager:</div>
 <div class="content">
-<pre>oc get sub ocs-operator -n openshift-storage  -o json | jq .status.conditions</pre>
+<pre class="highlightjs highlight"><code>MYALERTMANAGER=$(oc -n openshift-monitoring get routes/alertmanager-main --no-headers | awk '{print $2}')</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>Like all operators, the status conditions types are:</p>
+<p>Quickly view all alerts to check if your alert is still active.</p>
 </div>
-<div class="paragraph">
-<p><strong>CatalogSourcesUnhealthy, InstallPlanMissing, InstallPlanPending, InstallPlanFailed</strong></p>
-</div>
-<div class="paragraph">
-<p>The status for each type should be False. For example:</p>
-</div>
-<div class="listingblock">
+<div class="listingblock execute">
+<div class="title">Check all alerts</div>
 <div class="content">
-<pre class="highlightjs highlight"><code>[
-  {
-    "lastTransitionTime": "2021-01-26T19:21:37Z",
-    "message": "all available catalogsources are healthy",
-    "reason": "AllCatalogSourcesHealthy",
-    "status": "False",
-    "type": "CatalogSourcesUnhealthy"
-  }
-]</code></pre>
+<pre class="highlightjs highlight"><code>curl -k -H "Authorization: Bearer $(oc -n openshift-monitoring sa get-token prometheus-k8s)"  https://${MYALERTMANAGER}/api/v1/alerts | jq '.data[] | select( .labels.alertname) | { ALERT: .labels.alertname, STATE: .status.state}'</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>The output above shows a false status for type CatalogSourcesUnHealthly, meaning the catalog sources are healthy.  WIP insert basic cluster health/resources check?</p>
+<p><strong>Continue ONLY if you want to view your specific alert or need more details</strong></p>
 </div>
-<div class="paragraph">
-<p><strong>OCS Operator Pod Health:</strong></p>
-</div>
-<div class="paragraph">
-<p>Check the OCS operator pod status to see if there is an OCS operator upgrading in progress.</p>
-</div>
-<div class="listingblock">
-<div class="title">Find and view the status of the OCS operator: WIP Is Upgrade a status or only pending?</div>
+<div class="listingblock execute">
+<div class="title">Get your alertname from the alert, set for use in jq:</div>
 <div class="content">
-<pre>% oc get pod -n openshift-storage | grep ocs-operator
-% OCSOP=$(oc get pod -n openshift-storage  -o custom-columns=POD:.metadata.name --no-headers | grep ocs-operator)
-% echo $OCSOP
-% oc get pod/${OCSOP} -n openshift-storage
-% oc describe pod/${OCSOP} -n openshift-storage</pre>
+<pre class="highlightjs highlight"><code>export MYALERTNAME="&lt;alertname from alert&gt;"</code></pre>
+</div>
+</div>
+<div class="listingblock execute">
+<div class="title">Check if the alert is still active:</div>
+<div class="content">
+<pre class="highlightjs highlight"><code>curl -k -H "Authorization: Bearer $(oc -n openshift-monitoring sa get-token prometheus-k8s)"  https://${MYALERTMANAGER}/api/v1/alerts | jq '.data[] | select( .labels.alertname | test(env.MYALERTNAME)) | { ALERT: .labels.alertname, STATE: .status.state}'</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>If you determine the OCS operator is in progress, please be patient, wait 5 minutes and this alert should resolve itself.</p>
+<p>No entries means the alert is no longer active.</p>
 </div>
 <div class="paragraph">
-<p>If you have waited or see a different error status condition, please continue troubleshooting.</p>
+<p>Some alerts, such as mismatch versions, can occur during upgrades and resolve themselves. If this alert is not a mismatch version alert then there should be an investigation into what triggered the alert even though the alert resolved. Look for other active alerts or alerts with similiar timing.</p>
+</div>
+<div class="listingblock execute">
+<div class="title">If you need more details run:</div>
+<div class="content">
+<pre class="highlightjs highlight"><code>curl -k -H "Authorization: Bearer $(oc -n openshift-monitoring sa get-token prometheus-k8s)"  https://${MYALERTMANAGER}/api/v1/alerts | jq '.data[] | select( .labels.alertname | test(env.MYALERTNAME)) | { ALERTDETAILS: .}'</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>More about the Prometheus Alert endpoint can be found here:
+<a href="https://prometheus.io/docs/prometheus/latest/querying/api/#alerts" class="bare">https://prometheus.io/docs/prometheus/latest/querying/api/#alerts</a></p>
 </div>
 <div class="listingblock">
 <div class="title">pod status: NOT pending, running, but NOT ready &#8594; Check readiness probe.</div>
@@ -504,21 +460,83 @@ oc get pod | grep rook-ceph-mgr</pre>
 </div>
 </div>
 </div>
+<div class="sect2">
+<h3 id="_ocs_operator_pod_health"><a class="anchor" href="#_ocs_operator_pod_health"></a>5.3. OCS Operator Pod Health</h3>
+<div class="paragraph">
+<p>Check the OCS operator pod status to see if there is an OCS operator upgrading in progress.</p>
+</div>
+<div class="listingblock">
+<div class="title">Find and view the status of the OCS operator: WIP Is Upgrade a status or only pending?</div>
+<div class="content">
+<pre>% oc get pod -n openshift-storage | grep ocs-operator
+% OCSOP=$(oc get pod -n openshift-storage  -o custom-columns=POD:.metadata.name --no-headers | grep ocs-operator)
+% echo $OCSOP
+% oc get pod/${OCSOP} -n openshift-storage
+% oc describe pod/${OCSOP} -n openshift-storage</pre>
 </div>
 </div>
-<div class="sect1">
-<h2 id="_troubleshooting"><a class="anchor" href="#_troubleshooting"></a>6. Troubleshooting</h2>
-<div class="sectionbody">
-<div class="ulist">
-<ul>
-<li>
-<p>Issue encountered while following the SOP</p>
-</li>
-</ul>
+<div class="paragraph">
+<p>If you determine the OCS operator is in progress, please be patient, wait 5 minutes and this alert should resolve itself.</p>
+</div>
+<div class="paragraph">
+<p>If you have waited or see a different error status condition, please continue troubleshooting.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_check_for_ocs_operator_update"><a class="anchor" href="#_check_for_ocs_operator_update"></a>5.4. Check for OCS Operator Update</h3>
+<div class="paragraph">
+<p>WIP CLI does the status of the operator reflect update in progress?
+<a href="https://docs.openshift.com/container-platform/4.6/operators/admin/olm-status.html" class="bare">https://docs.openshift.com/container-platform/4.6/operators/admin/olm-status.html</a></p>
+</div>
+<div class="paragraph">
+<p>WIP UI
+The cause of the missing replicas must be determined and fixed. Basic troubleshooting starting with operator status all the way to OCP health may be required.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_ocs_operator_subscription_health"><a class="anchor" href="#_ocs_operator_subscription_health"></a>5.5. OCS Operator Subscription Health</h3>
+<div class="listingblock">
+<div class="title">Check the ocs-operator subscription status</div>
+<div class="content">
+<pre>oc get sub ocs-operator -n openshift-storage  -o json | jq .status.conditions</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Like all operators, the status conditions types are:</p>
+</div>
+<div class="paragraph">
+<p><strong>CatalogSourcesUnhealthy, InstallPlanMissing, InstallPlanPending, InstallPlanFailed</strong></p>
+</div>
+<div class="paragraph">
+<p>The status for each type should be False. For example:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>Any issues while following the SOP should be documented here.</pre>
+<pre class="highlightjs highlight"><code>[
+  {
+    "lastTransitionTime": "2021-01-26T19:21:37Z",
+    "message": "all available catalogsources are healthy",
+    "reason": "AllCatalogSourcesHealthy",
+    "status": "False",
+    "type": "CatalogSourcesUnhealthy"
+  }
+]</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The output above shows a false status for type CatalogSourcesUnHealthly, meaning the catalog sources are healthy.  WIP insert basic cluster health/resources check?</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_gathering_logs"><a class="anchor" href="#_gathering_logs"></a>6. Gathering Logs</h2>
+<div class="sectionbody">
+<div class="listingblock">
+<div class="title">Document Ceph Cluster health check:</div>
+<div class="content">
+<pre>For OCS specific results run:
+oc adm must-gather --image=registry.redhat.io/ocs4/ocs-must-gather-rhel8:v4.6</pre>
 </div>
 </div>
 </div>

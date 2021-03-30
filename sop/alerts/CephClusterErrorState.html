@@ -66,6 +66,9 @@
     <span class="nav-text">Alerts (Reviewed SOPs)</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="basic_template.html">basic_template</a>
+  </li>
+  <li class="nav-item" data-depth="1">
     <a class="nav-link" href="CephClusterReadOnly.html">CephClusterReadOnly</a>
   </li>
   <li class="nav-item" data-depth="1">
@@ -238,12 +241,6 @@
 <div class="sect1">
 <h2 id="_prerequisites"><a class="anchor" href="#_prerequisites"></a>3. Prerequisites</h2>
 <div class="sectionbody">
-
-</div>
-</div>
-<div class="sect1">
-<h2 id="_prerequisites_2"><a class="anchor" href="#_prerequisites_2"></a>4. Prerequisites</h2>
-<div class="sectionbody">
 <div class="paragraph">
 <p>To proceed with the prerequisites and resolution, you will need basic cli tools including:</p>
 </div>
@@ -261,7 +258,7 @@
 </ul>
 </div>
 <div class="sect2">
-<h3 id="_verify_cluster_access"><a class="anchor" href="#_verify_cluster_access"></a>4.1. Verify cluster access</h3>
+<h3 id="_verify_cluster_access"><a class="anchor" href="#_verify_cluster_access"></a>3.1. Verify cluster access</h3>
 <div class="listingblock execute">
 <div class="title">Verify you are admin and cluster server details:</div>
 <div class="content">
@@ -273,7 +270,7 @@
 </div>
 </div>
 <div class="sect2">
-<h3 id="_check_alerts"><a class="anchor" href="#_check_alerts"></a>4.2. Check Alerts</h3>
+<h3 id="_check_alerts"><a class="anchor" href="#_check_alerts"></a>3.2. Check Alerts</h3>
 <div class="listingblock execute">
 <div class="title">Get the route to this cluster&#8217;s alertmanager:</div>
 <div class="content">
@@ -322,7 +319,7 @@
 </div>
 </div>
 <div class="sect2">
-<h3 id="_document_ocs_ceph_cluster_health"><a class="anchor" href="#_document_ocs_ceph_cluster_health"></a>4.3. Document OCS Ceph Cluster Health</h3>
+<h3 id="_document_ocs_ceph_cluster_health"><a class="anchor" href="#_document_ocs_ceph_cluster_health"></a>3.3. Document OCS Ceph Cluster Health</h3>
 <div class="paragraph">
 <p>You may directly check OCS Ceph Cluster health by using the rook-ceph toolbox.
 .Check and document ceph cluster health:</p>
@@ -349,16 +346,16 @@ exit</code></pre>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_procedure_for_resolution"><a class="anchor" href="#_procedure_for_resolution"></a>5. Procedure for Resolution</h2>
+<h2 id="_procedure_for_resolution"><a class="anchor" href="#_procedure_for_resolution"></a>4. Procedure for Resolution</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_resolution_overview"><a class="anchor" href="#_resolution_overview"></a>5.1. Resolution Overview</h3>
+<h3 id="_resolution_overview"><a class="anchor" href="#_resolution_overview"></a>4.1. Resolution Overview</h3>
 <div class="paragraph">
 <p>General troubleshooting will be required in order to determine the cause of this alert.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_check_alerts_2"><a class="anchor" href="#_check_alerts_2"></a>5.2. Check Alerts</h3>
+<h3 id="_check_alerts_2"><a class="anchor" href="#_check_alerts_2"></a>4.2. Check Alerts</h3>
 <div class="listingblock execute">
 <div class="title">Get the route to this cluster&#8217;s alertmanager:</div>
 <div class="content">
@@ -456,7 +453,7 @@ oc get pod | grep rook-ceph-mgr</pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_ocs_operator_pod_health"><a class="anchor" href="#_ocs_operator_pod_health"></a>5.3. OCS Operator Pod Health</h3>
+<h3 id="_ocs_operator_pod_health"><a class="anchor" href="#_ocs_operator_pod_health"></a>4.3. OCS Operator Pod Health</h3>
 <div class="paragraph">
 <p>Check the OCS operator pod status to see if there is an OCS operator upgrading in progress.</p>
 </div>
@@ -478,7 +475,7 @@ oc get pod | grep rook-ceph-mgr</pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_check_for_ocs_operator_update"><a class="anchor" href="#_check_for_ocs_operator_update"></a>5.4. Check for OCS Operator Update</h3>
+<h3 id="_check_for_ocs_operator_update"><a class="anchor" href="#_check_for_ocs_operator_update"></a>4.4. Check for OCS Operator Update</h3>
 <div class="paragraph">
 <p>WIP CLI does the status of the operator reflect update in progress?
 <a href="https://docs.openshift.com/container-platform/4.6/operators/admin/olm-status.html" class="bare">https://docs.openshift.com/container-platform/4.6/operators/admin/olm-status.html</a></p>
@@ -489,7 +486,7 @@ The cause of the missing replicas must be determined and fixed. Basic troublesho
 </div>
 </div>
 <div class="sect2">
-<h3 id="_ocs_operator_subscription_health"><a class="anchor" href="#_ocs_operator_subscription_health"></a>5.5. OCS Operator Subscription Health</h3>
+<h3 id="_ocs_operator_subscription_health"><a class="anchor" href="#_ocs_operator_subscription_health"></a>4.5. OCS Operator Subscription Health</h3>
 <div class="listingblock">
 <div class="title">Check the ocs-operator subscription status</div>
 <div class="content">
@@ -525,7 +522,7 @@ The cause of the missing replicas must be determined and fixed. Basic troublesho
 </div>
 </div>
 <div class="sect1">
-<h2 id="_gathering_logs"><a class="anchor" href="#_gathering_logs"></a>6. Gathering Logs</h2>
+<h2 id="_gathering_logs"><a class="anchor" href="#_gathering_logs"></a>5. Gathering Logs</h2>
 <div class="sectionbody">
 <div class="listingblock">
 <div class="title">Document Ceph Cluster health check:</div>

@@ -65,6 +65,9 @@
     <button class="nav-item-toggle"></button>
     <span class="nav-text">Alerts (Reviewed SOPs)</span>
 <ul class="nav-list">
+  <li class="nav-item is-current-page" data-depth="1">
+    <a class="nav-link" href="basic_template.html">basic_template</a>
+  </li>
   <li class="nav-item" data-depth="1">
     <a class="nav-link" href="CephClusterReadOnly.html">CephClusterReadOnly</a>
   </li>
@@ -204,7 +207,8 @@
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
     <li><a href="../index.html">OCS Standard Operating Procedures</a></li>
-    <li><a href="basic_template.html">AlertName</a></li>
+    <li>Alerts (Reviewed SOPs)</li>
+    <li><a href="basic_template.html">basic_template</a></li>
   </ul>
 </nav>
   <div class="edit-this-page"><a href="https://github.com/mid998/ocs-sop/edit/main/sop/modules/alerts/pages/basic_template.adoc">Edit this Page</a></div>
@@ -217,14 +221,19 @@
 <h1 class="page">AlertName</h1>
 <div id="preamble">
 <div class="sectionbody">
-<div class="exampleblock">
+<div class="tabset is-loading">
+<div class="ulist tabs">
+<ul>
+<li>
+<p><a id="tabset1_tab-1-title"></a>Tab 1 Title</p>
+</li>
+<li>
+<p><a id="tabset1_tab-2-title"></a>Tab 2 Title</p>
+</li>
+</ul>
+</div>
 <div class="content">
-<div class="dlist">
-<dl>
-<dt class="hdlist1">Tab 1 Title</dt>
-<dd>
-<div class="openblock">
-<div class="content">
+<div class="tab-pane" aria-labelledby="tabset1_tab-1-title">
 <div class="paragraph">
 <p>This is the content of the first tab.</p>
 </div>
@@ -237,15 +246,10 @@
 </div>
 </div>
 </div>
-</div>
-</dd>
-<dt class="hdlist1">Tab 2 Title</dt>
-<dd>
+<div class="tab-pane" aria-labelledby="tabset1_tab-2-title">
 <div class="paragraph">
 <p>This is the content of the second tab.</p>
 </div>
-</dd>
-</dl>
 </div>
 </div>
 </div>
@@ -281,12 +285,6 @@
 <div class="sect1">
 <h2 id="_prerequisites"><a class="anchor" href="#_prerequisites"></a>4. Prerequisites</h2>
 <div class="sectionbody">
-
-</div>
-</div>
-<div class="sect1">
-<h2 id="_prerequisites_2"><a class="anchor" href="#_prerequisites_2"></a>5. Prerequisites</h2>
-<div class="sectionbody">
 <div class="paragraph">
 <p>To proceed with the prerequisites and resolution, you will need basic cli tools including:</p>
 </div>
@@ -304,7 +302,7 @@
 </ul>
 </div>
 <div class="sect2">
-<h3 id="_verify_cluster_access"><a class="anchor" href="#_verify_cluster_access"></a>5.1. Verify cluster access</h3>
+<h3 id="_verify_cluster_access"><a class="anchor" href="#_verify_cluster_access"></a>4.1. Verify cluster access</h3>
 <div class="listingblock execute">
 <div class="title">Verify you are admin and cluster server details:</div>
 <div class="content">
@@ -316,7 +314,7 @@
 </div>
 </div>
 <div class="sect2">
-<h3 id="_check_alerts"><a class="anchor" href="#_check_alerts"></a>5.2. Check Alerts</h3>
+<h3 id="_check_alerts"><a class="anchor" href="#_check_alerts"></a>4.2. Check Alerts</h3>
 <div class="listingblock execute">
 <div class="title">Get the route to this cluster&#8217;s alertmanager:</div>
 <div class="content">
@@ -365,7 +363,7 @@
 </div>
 </div>
 <div class="sect2">
-<h3 id="_document_ocs_ceph_cluster_health"><a class="anchor" href="#_document_ocs_ceph_cluster_health"></a>5.3. Document OCS Ceph Cluster Health</h3>
+<h3 id="_document_ocs_ceph_cluster_health"><a class="anchor" href="#_document_ocs_ceph_cluster_health"></a>4.3. Document OCS Ceph Cluster Health</h3>
 <div class="paragraph">
 <p>You may directly check OCS Ceph Cluster health by using the rook-ceph toolbox.
 .Check and document ceph cluster health:</p>
@@ -392,10 +390,10 @@ exit</code></pre>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_procedure_for_resolution"><a class="anchor" href="#_procedure_for_resolution"></a>6. Procedure for Resolution</h2>
+<h2 id="_procedure_for_resolution"><a class="anchor" href="#_procedure_for_resolution"></a>5. Procedure for Resolution</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_resolution_overview"><a class="anchor" href="#_resolution_overview"></a>6.1. Resolution Overview</h3>
+<h3 id="_resolution_overview"><a class="anchor" href="#_resolution_overview"></a>5.1. Resolution Overview</h3>
 <div class="paragraph">
 <p>Fill this in if necessary or leave ''</p>
 </div>
@@ -403,7 +401,7 @@ exit</code></pre>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_gathering_logs"><a class="anchor" href="#_gathering_logs"></a>7. Gathering Logs</h2>
+<h2 id="_gathering_logs"><a class="anchor" href="#_gathering_logs"></a>6. Gathering Logs</h2>
 <div class="sectionbody">
 <div class="listingblock">
 <div class="title">Document Ceph Cluster health check:</div>
