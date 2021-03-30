@@ -348,11 +348,9 @@ oc rsh -n openshift-storage $TOOLS_POD</code></pre>
 <div class="title">Step 2: From the rsh command prompt, run the following and capture the output.</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">ceph status
+ceph health status
 ceph osd status
-ceph osd tree
-ceph df
-rados df
-ceph versions
+ceph osd df
 exit</code></pre>
 </div>
 </div>
@@ -531,10 +529,22 @@ ocs-deviceset-localblksc-demo-2-data-0-nzzn5   Bound    local-pv-fb64d972       
 </div>
 </div>
 <div class="paragraph">
-<p>Add storage capacity (i.e. in AWS attach EBS volumes) to each hostname listed. Details of attaching additional storage capacity will depend on your particular environment and are beyond the scope of this document.</p>
+<p>Add storage capacity (i.e. in AWS attach EBS volumes) to each hostname listed.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+Details of attaching additional storage capacity will depend on your particular environment and are beyond the scope of this document.
+</td>
+</tr>
+</table>
 </div>
 <div class="paragraph">
-<p>Once you have added capacity to each node, verify LSO has discovered the new storage by viewing the localvolumediscoveryresults details. To view the localvolumediscoveryresults details, first view the localvolumediscovery then choose a node for a spot check:</p>
+<p><strong>Once you have added capacity to each node</strong>, verify LSO has discovered the new storage by viewing the localvolumediscoveryresults details. To view the localvolumediscoveryresults details, first view the localvolumediscovery then choose a node for a spot check:</p>
 </div>
 <div class="listingblock execute">
 <div class="content">
