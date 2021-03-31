@@ -67,9 +67,6 @@
     <span class="nav-text">Alerts (Reviewed SOPs)</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="basic_template.html">basic_template</a>
-  </li>
-  <li class="nav-item" data-depth="1">
     <a class="nav-link" href="CephClusterReadOnly.html">CephClusterReadOnly</a>
   </li>
   <li class="nav-item" data-depth="1">
@@ -329,6 +326,18 @@
 <div class="paragraph">
 <p>You may directly check OCS Ceph Cluster health by using the rook-ceph toolbox.</p>
 </div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The rook-ceph toolbox is not supported by Red Hat and is used here only to provide a quick health assessment. Do not use the toolbox to modify your Ceph cluster. Use the toolbox for querying health only.
+</td>
+</tr>
+</table>
+</div>
 <div class="listingblock execute">
 <div class="content">
 <pre class="highlightjs highlight"><code>oc patch OCSInitialization ocsinit -n openshift-storage --type json --patch  '[{ "op": "replace", "path": "/spec/enableCephTools", "value": true }]'</code></pre>
@@ -435,11 +444,20 @@ oc rsh -n openshift-storage $TOOLS_POD</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>This in this situation, it is common to have <strong>MANY</strong> alerts firing or warning all at once. You may track current alert statuses by running:</p>
+<p>This in this situation, it is common to have <strong>MANY</strong> alerts firing or warning all at once. If you have not already checked firing alerts, you may do so now by running:</p>
 </div>
-<div class="listingblock">
+<div class="listingblock execute">
 <div class="content">
-<pre>WIP: findall_alerts.sh instructions here</pre>
+<pre class="highlightjs highlight"><code>MYALERTMANAGER=$(oc -n openshift-monitoring get routes/alertmanager-main --no-headers | awk '{print $2}')</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Quickly view all alerts to check if your alert is still active.</p>
+</div>
+<div class="listingblock execute">
+<div class="title">Check all alerts</div>
+<div class="content">
+<pre class="highlightjs highlight"><code>curl -k -H "Authorization: Bearer $(oc -n openshift-monitoring sa get-token prometheus-k8s)"  https://${MYALERTMANAGER}/api/v1/alerts | jq '.data[] | select( .labels.alertname) | { ALERT: .labels.alertname, STATE: .status.state}'</code></pre>
 </div>
 </div>
 </div>
@@ -791,9 +809,15 @@ oc rsh -n openshift-storage $TOOLS_POD</code></pre>
 <div class="paragraph">
 <p>Alerts will resolve themselves as the cluster recovers.</p>
 </div>
-<div class="listingblock">
+<div class="listingblock execute">
 <div class="content">
-<pre>WIP: findall_alerts.sh instructions here</pre>
+<pre class="highlightjs highlight"><code>MYALERTMANAGER=$(oc -n openshift-monitoring get routes/alertmanager-main --no-headers | awk '{print $2}')</code></pre>
+</div>
+</div>
+<div class="listingblock execute">
+<div class="title">Check all alerts. You may have to run this several times to watch the alerts resolve:</div>
+<div class="content">
+<pre class="highlightjs highlight"><code>curl -k -H "Authorization: Bearer $(oc -n openshift-monitoring sa get-token prometheus-k8s)"  https://${MYALERTMANAGER}/api/v1/alerts | jq '.data[] | select( .labels.alertname) | { ALERT: .labels.alertname, STATE: .status.state}'</code></pre>
 </div>
 </div>
 <div class="paragraph">
